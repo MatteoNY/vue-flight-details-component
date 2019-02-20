@@ -1,2 +1,3 @@
-# Vue-flight-details-component (Vue 2.6.6)
+# Vue-flight-details-component 
 Proof of concept (in-progress)
+Using latest Vue
