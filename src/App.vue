@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FlightDetails from './components/FlightDetailsList.vue'
+import FlightDetails from './components/FlightDetails.vue'
 
 export default {
   name: 'app',

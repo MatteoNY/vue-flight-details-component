@@ -5,7 +5,6 @@
 			v-for="(segData, index) in allData.results.legs[0].flightOptionDates[0].flightOptions"
 			:key="`A-${index}`"
 		>
-			<!-- <FlightDetail :flightData="segData.segments"  v-if="index=== 60"></FlightDetail > -->
 			<FlightDetailDetails :flightData="segData"  ></FlightDetailDetails>
 		</div>
 	</section>
@@ -14,9 +13,7 @@
 <script>
 import { mapGetters } from "vuex";
 
-const Notes = () => import("@/components/Notes");
-import FlightDetail from "@/components/FlightDetail.vue";
-import FlightDetailDetails from "@/components/FlightDetailDetails.vue";
+import FlightDetailDetails from "@/components/FlightDetail.vue";
 
 export default {
 	name: "FlightDetails",
@@ -24,9 +21,7 @@ export default {
 		msg: String
 	},
 	components: {
-		FlightDetail,
-		FlightDetailDetails,
-		Notes
+		FlightDetailDetails, 
 	},
 	computed: {
 		...mapGetters({
