@@ -21,3 +21,4 @@ firebase.json
 *.sln
 *.sw*
 .firebaserc
+.firebase

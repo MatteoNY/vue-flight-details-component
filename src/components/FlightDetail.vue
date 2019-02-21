@@ -40,11 +40,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+ 
 
 
 export default {
-	name: "FlightDetailDetails",
+	name: "FlightDetail",
 	props: {
 		flightData: Object
 	},
@@ -52,9 +52,7 @@ export default {
 	computed: {},
 	directives: {},
 	data: () => ({
-		showNotes: false,
-		first: "matteo",
-		last: "carr"
+		test: "matteo"
 	})
 };
 </script>
@@ -119,7 +117,7 @@ export default {
 		}
 	}
 
-		.z-line::before {
+	.z-line::before {
 		// space
 		content: '\0020';
 		padding: 0;
@@ -150,7 +148,7 @@ export default {
 		font-size: .9rem;
 		color: $clientBarColor;
 		vertical-align: top;
-		margin-top: 9px;
+		margin: 9px 2px 0 0;
 	}
 	.fa-plane {
 		font-size: 1.5rem;
