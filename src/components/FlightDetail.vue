@@ -28,10 +28,11 @@
 					<li>Connecting {{flightData.tripDurationString}}</li>
 					<li>Operated by {{flightData.operatedByDisplay}}</li>
 					<li>
-						<button class="flex-container__btn">
+						<button ref="FDBTN" class="flex-container__btn" @click.prevent="openModalFlightSegments">
 							Flight Details
 							<i class="fas fa-angle-right"></i>
 						</button>
+						<!-- <button @click="error()">Create error</button> -->
 					</li>
 				</ul>
 			</div>
@@ -49,6 +50,11 @@ export default {
 		flightData: Object
 	},
 	components: {},
+	methods: {
+		openModalFlightSegments(e) {
+			this.$emit('openModal:segment', { show: true, data: this.flightData.segments, ref: this.$refs.FDBTN  } );
+		}
+	},
 	computed: {},
 	directives: {},
 	data: () => ({
