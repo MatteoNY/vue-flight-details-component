@@ -129,11 +129,9 @@ export default {
 		padding: 0;
 		margin: 0;
 		width: 92%;
-		border-bottom: 0.1rem solid $clientBarColor;
+		border-bottom: 1px solid $clientBarColor;
 		z-index: -100;
 		position: absolute;
-		height: 1px;
-		margin-top: 3px;
 		top: 14.5px;
 		right: 4px;
 	}
@@ -142,25 +140,23 @@ export default {
 	@media only screen and (min-width: 768px) {
 
 		.z-line::before {
-			width: 98%;
-			margin-top: 3px;
 			top: 14.5px;
+			width: 99%;
 			right: 4px;
 		}
-
 	}
 	
 	.fa-circle {
-		font-size: .9rem;
+		font-size: 1rem;
 		color: $clientBarColor;
 		vertical-align: top;
-		margin: 9px 2px 0 0;
+		margin: 6px 2px 0 0;
 	}
 	.fa-plane {
 		font-size: 1.5rem;
 		color: $clientBarColor;
 		vertical-align: top;
-		margin-top: 4px;
+		margin-top: 2px;
 	}
 
 }

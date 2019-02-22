@@ -17,7 +17,14 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+ 
+ @font-face {
+  font-family: 'Roboto-auto';
+  font-display: auto;
+  src: local('Roboto'), url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900) format('woff2');
+}
+
+  font-family: 'Roboto-auto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
