@@ -18,7 +18,7 @@
             <slot></slot>
     
             <slot name="actions"> 
-               <div class="dialog-modal__actions">  
+               <div class="dialog-modal__actions" v-if="!isMobile">  
                     <v-btn class="dialog-modal__actions--agree"  v-if="dialogBtns.agree" flat @click.prevent="eventHandler('agree')" :aria-label="dialogBtns.agree">{{dialogBtns.agree}}</v-btn>
                     <v-btn class="dialog-modal__actions--ok"      v-if="dialogBtns.ok"     flat @click.prevent="eventHandler('ok')"     :aria-label="dialogBtns.ok">{{dialogBtns.ok}}</v-btn>
                     <v-btn class="dialog-modal__actions--cancel"  v-if="dialogBtns.cancel" flat @click.prevent="eventHandler('cancel')" :aria-label="dialogBtns.cancel">{{dialogBtns.cancel}}</v-btn>

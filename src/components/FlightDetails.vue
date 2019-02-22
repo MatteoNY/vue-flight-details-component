@@ -1,13 +1,10 @@
 <template>
 	<section>
-		<div
-			class="flights__container"
-			v-for="(segData, index) in allData.results.legs[0].flightOptionDates[0].flightOptions"
-			:key="`A-${index}`"
-		>
+		<div class="flights__container" v-for="(segData, index) in allData.results.legs[0].flightOptionDates[0].flightOptions" :key="`A-${index}`">
 			<FlightDetail :flightData="segData" @openModal:segment="openModalHandler($event)"></FlightDetail>
 		</div>
 		<v-app>
+			
 			<vxDialog
 				ref="dialogFlights"
 				:btnTitle="''"
@@ -17,13 +14,13 @@
 				:dialogModel="dialog.showDialog"
 				:dialogBtns="dialogBtns"
 				:isScrollable="false"
-				:isMobile="false"
+				:isMobile="isMobileDevice"
 				v-on:update:modal="eventHandler($event)"
 			>
 				<div class="modal__container">
 					<h2 class="modal__container--title" slot="title">Flight Details:</h2>
 					 
-					<div class="modal__container--text" slot="text" v-for="(segDetails, index) in segmentData"	:key="`B-${index}`">
+					<div class="modal__container--text" slot="text" v-for="(segDetails, index) in segmentData"	:key="`FD-${index}`">
 						<ul style="text-align: left; list-style-type: none; margin-bottom: 1rem;">
 							<li><b>Depart</b> {{segDetails.departureAirport.name}} {{segDetails.departureAirport.code}}</li>
 							<li>Operated by {{segDetails.operatingAirline}} {{segDetails.departureAirport.code}}</li>
@@ -38,7 +35,7 @@
 					</div>
 
 
-						<div class="modal__container--text" slot="text" v-for="(segDetails, index) in segmentData"	:key="`B-${index}`">
+						<div class="modal__container--text" slot="text" v-for="(segDetails, index) in segmentData"	:key="`FA-${index}`">
 						<ul style="text-align: left; list-style-type: none; margin-bottom: 1rem;">
 							<li><b>Depart</b> {{segDetails.departureAirport.name}} {{segDetails.departureAirport.code}}</li>
 							<li>Operated by {{segDetails.operatingAirline}} {{segDetails.departureAirport.code}}</li>
@@ -98,6 +95,11 @@ export default {
 				close: "close",
 				agree: null
 			};
+		},
+		isMobileDevice() {
+			const isMobile = "ontouchstart" in window || navigator.msMaxTouchPoints ? true : false;
+			   console.log("is mobile?", isMobile);
+			return isMobile;
 		}
 	},
 	methods: {
